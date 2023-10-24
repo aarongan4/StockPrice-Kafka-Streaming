@@ -1,0 +1,26 @@
+--install apache kafka
+wget https://downloads.apache.org/kafka/3.6.0/kafka_2.12-3.6.0.tgz
+tar -vxf kafka_2.12-3.6.0.tgz
+
+--install java
+sudo yum install java-1.8.0-openjdk
+
+--start zookeeper
+bin/zookeeper-server-start.sh config/zookeeper.properties
+
+--change kafka server memory
+export KAFKA_HEAD_OPTS="-Xmx256M -Xms128M"
+
+--start kafka server
+bin/kafka-server-start.sh config/server.properties
+
+--configure zookeeper with public ip address
+
+--create topic
+bin/kafka-topics.sh --create --topic demo_test2 --bootstrap-server <yourexternalip>:9092 --replication-factor 1 --partitions 1
+
+--start producer 
+bin/kafka-console-producer.sh --topic demo_test2 --bootstrap-server <yourexternalip>:9092
+
+--start consumer
+bin/kafka-console-consumer.sh --topic demo_test2 --bootstrap-server <yourexternalip>:9092
