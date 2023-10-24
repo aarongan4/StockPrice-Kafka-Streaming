@@ -33,7 +33,7 @@ Before you get started, ensure you have the following prerequisites in place:
    - Update the package list
    - Install Java
    - Install Apache Kafka
-      - All commands can be found [here].
+      - All commands can be found [here](https://github.com/aarongan4/StockPrice-Kafka-Streaming/blob/main/linux_commands.txt).
 
 4. **Configure Kafka Zookeeper and Start Kafka Server:**
 
@@ -48,9 +48,10 @@ Before you get started, ensure you have the following prerequisites in place:
 
 6. **Create Python Scripts for Data Processing and Uploading:**
 
-   - Develop Python scripts to read stock market data using Pandas or a relevant library.
+   - Develop Python scripts to read stock market data using Pandas or a relevant library. 
    - Create mock price data or connect to a real data source.
    - Configure producer and consumer objects in your Python scripts for publishing and subscribing to Kafka topics.
    - If needed, set up connectivity to an S3 bucket to upload processed data.
+      - Sample Code in repository!
 
 
